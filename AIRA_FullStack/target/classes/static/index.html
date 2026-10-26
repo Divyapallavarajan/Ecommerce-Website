@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIRA | Premium Shopping</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topline">PREMIUM FINDS, EVERYDAY STYLE — DISCOVER YOUR NEXT FAVOURITE</div>
+<header class="header">
+  <a class="logo" href="#" onclick="showPage('shop')">AIR<span>A</span></a>
+  <input id="searchBox" class="search" placeholder="Search products, categories..." oninput="renderProducts()">
+  <div class="head-actions"><button class="ghost" onclick="openAccount()">Account</button><button class="dark" onclick="showPage('cart')">Bag (<span id="cartCount">0</span>)</button></div>
+</header>
+<nav class="nav"><button onclick="showPage('shop')">Home</button><button onclick="filterCategory('Women')">Women</button><button onclick="filterCategory('Men')">Men</button><button onclick="filterCategory('Sarees')">Sarees</button><button onclick="filterCategory('Footwear')">Footwear</button><button onclick="showPage('orders')">My Orders</button><button onclick="openAccount()">Sign in</button></nav>
+<main>
+<section id="hero" class="hero"><div><p class="eyebrow">THE NEW SEASON EDIT</p><h1>Style that<br><em>speaks for you.</em></h1><p>Thoughtfully selected pieces for your everyday wardrobe.</p><button class="dark big" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">EXPLORE COLLECTION</button></div><div class="hero-art"><div class="art-circle"></div><div class="art-card"><span>AIRA</span><b>NEW<br>SEASON</b><small>STYLE / 2026</small></div></div></section>
+<section class="section-head"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Shop the collection</h2></div><div class="shop-filters"><select id="categoryFilter" onchange="onShopCategoryChange()"><option value="">All categories</option><option>Women</option><option>Men</option><option>Sarees</option><option>Footwear</option><option>Accessories</option></select><select id="subcategoryFilter" onchange="renderProducts()"><option value="">All subcategories</option></select></div></section>
+<section id="products" class="product-grid"></section>
+<section id="pageArea" class="page-area hidden"></section>
+</main>
+<footer><div class="logo">AIR<span>A</span></div><p>Everyday style. Thoughtfully chosen.</p><small>© 2026 AIRA Premium Shopping</small></footer>
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body></html>
